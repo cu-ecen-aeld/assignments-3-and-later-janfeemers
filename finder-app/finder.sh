@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # finds hits in a file dir
 # Author: Jan Feemers
 
