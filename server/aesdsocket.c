@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
 
     openlog("aesdsocket", LOG_PID, LOG_USER);
     syslog(LOG_INFO, "Starting");
+    printf("Started on port %s\n", PORT);
     SLIST_INIT(&g_threads);
 
     // Check if deamon flag specified
@@ -148,7 +149,7 @@ int main(int argc, char *argv[])
 
         // Get IP address of the client
         inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), params->client_address, sizeof(params->client_address));
-
+        printf("New client on ip; %s\n", params->client_address);
         if (pthread_create(&thread_id, NULL, connection_thread, params) < 0)
         {
             exit_on_error("pthread_create", strerror(errno));
