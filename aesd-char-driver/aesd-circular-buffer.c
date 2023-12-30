@@ -13,6 +13,7 @@
 #else
 #include <string.h>
 #endif
+#include <assert.h>
 
 #include "aesd-circular-buffer.h"
 
@@ -29,6 +30,8 @@
 struct aesd_buffer_entry *aesd_circular_buffer_find_entry_offset_for_fpos(struct aesd_circular_buffer *buffer,
                                                                           size_t char_offset, size_t *entry_offset_byte_rtn)
 {
+    assert(buffer != NULL);
+    assert(entry_offset_byte_rtn != NULL);
     /**
     * TODO: implement per description
     */
@@ -44,6 +47,8 @@ struct aesd_buffer_entry *aesd_circular_buffer_find_entry_offset_for_fpos(struct
 */
 void aesd_circular_buffer_add_entry(struct aesd_circular_buffer *buffer, const struct aesd_buffer_entry *add_entry)
 {
+    assert(buffer != NULL);
+    assert(add_entry != NULL);
     /**
     * TODO: implement per description
     */
@@ -54,5 +59,6 @@ void aesd_circular_buffer_add_entry(struct aesd_circular_buffer *buffer, const s
 */
 void aesd_circular_buffer_init(struct aesd_circular_buffer *buffer)
 {
+    assert(buffer != NULL);
     memset(buffer, 0, sizeof(struct aesd_circular_buffer));
 }
