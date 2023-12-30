@@ -13,6 +13,7 @@ set(AUTOTEST_SOURCES
     test/assignment7/Test_circular_buffer.c
 
 )
+set(CMAKE_BUILD_TYPE Debug)
 # A list of all files containing test code that is used for assignment validation
 set(TESTED_SOURCE
     ../examples/autotest-validate/autotest-validate.c
